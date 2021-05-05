@@ -1,0 +1,397 @@
+<head>
+	<meta charset="UTF-8">
+	<style>
+		* {
+		    box-sizing: inherit;
+		}
+		body, button, input, optgroup, select, textarea {
+			font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+		}
+		blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html, iframe, legend, li, ol, p, pre, textarea, ul {
+			margin: 0;
+			padding: 0;
+		}
+		html {
+		    background-color: #fff;
+			font-size: 16px;
+			min-width: 300px;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			text-rendering: optimizeLegibility;
+			box-sizing: border-box;
+		}
+		body {
+			    color: #4a4a4a;
+				font-size: 1em;
+				font-weight: 400;
+				line-height: 1.5;
+		}
+		article, aside, figure, footer, header, hgroup, section {
+			display: block;
+		}
+		button, input, select, textarea {
+			margin: 0;
+		}
+		fieldset { border: none; text-align: center}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		.field:not(:last-child) {
+			margin-bottom: .75rem;
+		}
+		.label:not(:last-child) {
+			margin-bottom: .5em;
+		}
+		.label {
+			color: #363636;
+			display: block;
+			text-align: left;
+			font-size: 1rem;
+			font-weight: 700;
+		}
+		.control {
+			box-sizing: border-box;
+			clear: both;
+			font-size: 1rem;
+			position: relative;
+			text-align: inherit;
+		}
+		.help {
+			display: block;
+			font-size: .75rem;
+			margin-top: .25rem;
+		}
+		.input, .textarea {
+    box-shadow: inset 0 .0625em .125em rgba(10,10,10,.05);
+    max-width: 100%;
+    width: 100%;
+}
+.input, .select select, .textarea {
+    background-color: #fff;
+    border-color: #dbdbdb;
+    border-radius: 4px;
+    color: #363636;
+}
+.button, .file-cta, .file-name, .input, .pagination-ellipsis, .pagination-link, .pagination-next, .pagination-previous, .select select, .textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.5em;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding-bottom: calc(.5em - 1px);
+    padding-left: calc(.75em - 1px);
+    padding-right: calc(.75em - 1px);
+    padding-top: calc(.5em - 1px);
+    position: relative;
+    vertical-align: top;
+}
+
+		.black-border {
+			border: 1px solid black !important;
+			font-weight: bold !important;
+			justify-content: center;
+			background-color: #f5f5f5;
+		}
+		input { color: black !important; text-align: center !important;}
+		input[disabled] {
+			color: black !important;
+			font-weight: bold !important;
+			background-color: #f5f5f5;
+			box-shadow: none;
+			cursor: default !important;
+		}
+		form { margin-block-end: 0; }
+		main {
+			font-size: 16px;
+			margin: 30px auto;
+			max-width: 500px;
+			display: grid;
+			grid-row-gap: 35px;
+			justify-items: center;
+		}
+		section.options {
+			margin-bottom: -20px;
+			padding: 0 20px;
+			min-width: 360px;
+			min-width: min(100%, 360px);
+		}
+		table td, table th {
+			height: 100%;
+			padding: 0;
+			vertical-align: top;
+			max-width: 140px !important;
+			text-align: center !important;
+			font-size: 15px;
+		}
+		table th {
+			padding-bottom: 5px;
+			color: #363636;
+		}
+		td:first-child, th:first-child {
+			width: 75px !important;
+			font-weight: bold;
+		}
+		td input {
+			max-width: 135px !important;
+			font-size: 15px;
+		}
+		section.output fieldset .field {
+			text-align: left;
+			display: inline-block;
+			width: 150px;
+			min-width: 160px;
+		}
+		.range-wrap {
+		  position: relative;
+		  margin: 0 auto 3rem;
+		  cursor: pointer;
+		}
+		.range { width: 100%; }
+		.bubble {
+		  background-color: #f5f5f5;
+		  color: black;
+		  font-weight: bold;
+		  padding: 4px 12px;
+		  position: absolute;
+		  border-radius: 4px;
+		  top: 25px;
+		  left: 50%;
+		  transform: translateX(-50%);
+		  cursor: default !important;
+		}
+	</style>
+</head>
+<main>
+	<section>
+		<table>
+			<thead>
+				<tr>
+					<th>Godina</th>
+					<th>Godišnji prihod</th>
+					<th>PID</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>2015</td>
+					<td>
+						<div class="control">
+							<input value="960.000" class="yearly-income "
+								type="text" placeholder="960.000">
+						</div>
+					</td>
+					<td>
+						<div class="control">
+							<input value="91,065.60" class="pid "
+								type="text" disabled>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>2016</td>
+					<td>
+						<div class="control">
+							<input value="960.000" class="yearly-income "
+								type="text" placeholder="960.000">
+						</div>
+					</td>
+					<td>
+						<div class="control">
+							<input value="91,065.60" class="pid "
+								type="text" disabled>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>2017</td>
+					<td>
+						<div class="control">
+							<input value="960.000" class="yearly-income "
+								type="text" placeholder="960.000">
+						</div>
+					</td>
+					<td>
+						<div class="control">
+							<input value="91,065.60" class="pid "
+								type="text" disabled>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>2018</td>
+					<td>
+						<div class="control">
+							<input value="960.000" class="yearly-income "
+								type="text" placeholder="960.000">
+						</div>
+					</td>
+					<td>
+						<div class="control">
+							<input value="91,065.60" class="pid "
+								type="text" disabled>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>2019</td>
+					<td>
+						<div class="control">
+							<input value="960.000" class="yearly-income "
+								type="text" placeholder="960.000">
+						</div>
+					</td>
+					<td>
+						<div class="control">
+							<input value="91,065.60" class="pid "
+								type="text" disabled>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>2020</td>
+					<td>
+						<div class="control">
+							<input value="960.000" class="yearly-income "
+								type="text" placeholder="960.000">
+						</div>
+					</td>
+					<td>
+						<div class="control">
+							<input value="91,065.60" class="pid "
+								type="text" disabled>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<section class="options">
+		<form>
+			<fieldset>
+				<div class="field">
+					<label class="label" for="broj-godina-otplate">Broj godina otplate</label>
+					<div class="control range-wrap">
+					  <input type="range" class="range" id="broj-godina-otplate" name="broj-godina-otplate"
+						min="1" value="10" max="10" step="1" >
+					  <output class="bubble black-border"></output>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</section>
+	<section class="output">
+		<form>
+			<fieldset class=" ">
+				<div class="field">
+				  <label class="label" for="total">Ukupan dug</label>
+				  <div class="control">
+					<span id="total" name="total"
+						type="text" class="input black-border">
+						546,393.60
+					</span>
+				  </div>
+				</div>
+				<div class="field">
+				  <label class="label" for="total-monthly">Mesečna rata</label>
+				  <div class="control">
+					<span id="total-monthly" name="total-monthly"
+						type="text" class="input black-border">
+						4,553.28
+					</span>
+				  </div>
+				</div>
+			</fieldset>
+		</form>
+	</section>
+</main>
+<script>
+	const getNumberValue = element => {
+		let val = element.value
+			.replace('%', '')
+			.replaceAll('.', '')
+			.replace(',', '.');
+		let num = Number(val);
+		return Number.isNaN(num) ? 0 : num;
+	};
+	const format = (num) => {
+		return num.toString()
+			.replace('.', ',')
+			.replace(/(,\d$)/, "$10")
+			.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+	};
+	const formatDecimal = (num) => {
+		return num.toFixed(2)
+			.toString()
+			.replace('.', ',')
+			.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+	};
+	const besteretni = 384000;
+	const yearlyPid = x => {
+		return x <= (besteretni + x * 0.5) ? 0 :
+			((x - (x * 0.5) - besteretni) * 0.558);
+	};
+	
+	window.addEventListener('DOMContentLoaded', () => {
+		//init			
+		const brojGodinaOtplateElement = document.getElementById('broj-godina-otplate');
+		let brojGodinaOtplate = brojGodinaOtplateElement.value;
+		const godisnjiIznosiElemens = [].slice.call(document.getElementsByClassName('yearly-income'), 0);
+		let godisnjiIznosi = godisnjiIznosiElemens.map(x => x.value);
+		
+		const godisnjiPidElements = [].slice.call(document.getElementsByClassName('pid'), 0);
+		const ukupanDugElement = document.getElementById('total');
+		const mesecnaRataElement = document.getElementById('total-monthly');
+		
+		const calcAndRender = () => {
+			brojGodinaOtplate = Math.floor(brojGodinaOtplateElement.value);
+			godisnjiIznosiElemens.forEach((element, i) => {
+				godisnjiIznosi[i] = getNumberValue(element);
+				godisnjiPidElements[i].value = formatDecimal(yearlyPid(godisnjiIznosi[i]));
+			});
+			const total = godisnjiPidElements.reduce((acc, element) =>
+				acc + getNumberValue(element), 0);
+			ukupanDugElement.innerText = formatDecimal(total);
+			mesecnaRataElement.innerText = brojGodinaOtplate > 0 ?
+				formatDecimal(total / brojGodinaOtplate / 12) : "";
+		};
+		const updateState = event => {
+			event.target.value = format(getNumberValue(event.target));
+			calcAndRender();
+		};
+		
+		[brojGodinaOtplateElement, ...godisnjiIznosiElemens].forEach(element => {
+			element.addEventListener('change', updateState)
+		});
+		calcAndRender();
+		
+		
+		const allRanges = document.querySelectorAll(".range-wrap");
+allRanges.forEach(wrap => {
+  const range = wrap.querySelector(".range");
+  const bubble = wrap.querySelector(".bubble");
+
+  range.addEventListener("input", () => {
+    setBubble(range, bubble);
+  });
+  setBubble(range, bubble);
+});
+
+function setBubble(range, bubble) {
+  const val = range.value;
+  const min = range.min ? range.min : 0;
+  const max = range.max ? range.max : 100;
+  const newVal = Number(((val - min) * 100) / (max - min));
+  bubble.innerHTML = val;
+
+  // Sorta magic numbers based on size of the native UI thumb
+  bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+}
+	});
+</script>
